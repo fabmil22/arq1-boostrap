@@ -1,0 +1,5 @@
+<h3>lista de datos</h3>
+
+<ul  class="list-group" >
+  <li class="list-group-item" *ngFor="let item of data$ | async">{{ item.name}}</li>
+</ul>
