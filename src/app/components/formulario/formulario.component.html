@@ -1,0 +1,44 @@
+<form  [formGroup]="form1" (ngSubmit)="onSubmit()">
+
+<!-- Output comment -->
+<div class="card card-block">
+<pre class="card-text">{{ form1.value.comment }}</pre>
+</div>
+<p class="small">{{ form1.value.lastUpdateTS }}</p>
+
+
+
+<!-- Name input -->
+<div class="form-group">
+<label for="name">Name</label>
+<input type="text"
+     class="form-control"
+     formControlName="name"
+     placeholder="Enter name">
+</div>
+
+<!-- Name input -->
+<div class="form-group">
+  <label for="avatar">Avatar</label>
+  <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput>
+  
+  <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>
+</div>
+
+<!-- Email input -->
+<div class="form-group">
+<label for="email">Email address</label>
+<input type="email"
+     class="form-control"
+     formControlName="email"
+     placeholder="Enter email">
+<small class="form-text text-muted">
+     We'll never share your email with anyone else.
+</small>
+</div>
+
+<button type="submit"
+    class="btn btn-primary"
+    [disabled]="!form1.valid">Submit
+</button>
+</form>

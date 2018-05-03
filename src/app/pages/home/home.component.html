@@ -1,5 +1,17 @@
-<h3>lista de datos</h3>
+<h3>Lista de datos</h3>
 
-<ul  class="list-group" >
-  <li class="list-group-item" *ngFor="let item of data$ | async">{{ item.name}}</li>
-</ul>
+
+<div class="row">
+  <div class="col-md-7">
+    <ul  class="list-group" >
+      <li class="list-group-item" *ngFor="let item of data$ | async">{{ item.name}}</li>
+    </ul>
+  </div>
+  <div class="col-md-5">
+    <ul>
+      <li class="list-group-item" *ngFor="let item1 of Tool$ | async">{{ item1.tool |capitalize }}</li>
+    </ul>
+      
+    <app-formulario></app-formulario>
+  </div>
+</div>

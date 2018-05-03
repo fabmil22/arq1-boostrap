@@ -5,7 +5,9 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
 
 import 'rxjs/add/operator/catch';
-import { User } from './model/user';
+import { User } from '../model/user';
+import { Tool } from '../model/tool';
+
 
 
 const cudOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
@@ -14,12 +16,19 @@ const cudOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/jso
 export class UsersService {
 
   private usersUrl = 'api/users';
+  private usersUrlTools = 'api/tools';
   constructor (private http: HttpClient) {}
 
   getUsers (): Observable<User[]> {
     return this.http.get<User[]>(this.usersUrl)
       .catch(this.handleError);
   }
+
+  getTools (): Observable<Tool[]> {
+    return this.http.get<Tool[]>(this.usersUrlTools)
+      .catch(this.handleError);
+  }
+
 
   getUser(id: string): Observable<User> {
     const url = `${this.usersUrl}/${id}`;

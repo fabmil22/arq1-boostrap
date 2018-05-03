@@ -264,6 +264,19 @@ export class InMemoryDataService implements InMemoryDbService {
         'phone': '+1 (862) 463-3660'
       }
     ];
-    return {users};
+
+    const tools = [
+      {
+        tool: 'martillo',
+        precio: 33
+      },
+      {
+        tool: 'moto sierra',
+        precio: 77
+      }
+    
+    ];
+
+    return {users, tools};
   }
 }

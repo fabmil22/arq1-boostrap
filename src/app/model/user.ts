@@ -10,7 +10,7 @@ export class User {
   index: number;
   guid: string;
   isActive = false;
-  picture: string;
+  picture: string|any;
   age: number;
   name: string;
   gender: Genders;
